@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1pt"
+    android:background="@drawable/ticket_background2"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/childLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1pt"
+        android:layout_weight="1"
+        android:background="@drawable/ticket_background"
+        android:orientation="vertical"
+        android:padding="3pt">
+
+        <TextView
+            android:id="@+id/TitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="@string/Title_hint"
+            android:maxLength="50"
+            android:textColor="#424242"
+            android:textColorHint="#9E9E9E"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/NoteTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5pt"
+            android:hint="@string/Description_hint"
+            android:textColor="#424242"
+            android:textColorHint="#9E9E9E"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

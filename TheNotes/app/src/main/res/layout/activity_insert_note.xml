@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+  <androidx.appcompat.widget.Toolbar
+      android:id="@+id/insertNoteToolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?actionBarSize"
+      android:background="@color/white"
+      />
+
+  <EditText
+      android:id="@+id/TitleET"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:autofillHints=""
+      android:gravity="start"
+      android:hint="@string/Title_hint"
+      android:inputType="text"
+      android:maxLength="50"
+      android:textColor="#000000"
+      android:textColorHint="#838383"
+      android:textSize="30sp" />
+
+  <EditText
+      android:id="@+id/NoteET"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:autofillHints=""
+      android:gravity="start"
+      android:hint="@string/Description_hint"
+      android:inputType="text"
+      android:textColor="#000000"
+      android:textColorHint="#838383"
+      android:textSize="14sp" />
+
+</LinearLayout>
