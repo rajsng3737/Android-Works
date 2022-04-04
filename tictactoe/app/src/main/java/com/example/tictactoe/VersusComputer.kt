@@ -13,18 +13,17 @@ class VersusComputer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_versus_computer)
     }
-
-    var count = 0
-    var someoneWon = false
-    var player = 1
-    var playerClicks = ArrayList<Int>()
-    var computerClicks = ArrayList<Int>()
-    var playerRecord = 0
-    lateinit var compButton: Button
-    var buttonId = 0
-    var computerRecord = 0
-    var scoreCard: TextView? = null
-    var choices = mutableListOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    private var count = 0
+    private var someoneWon = false
+    private var player = 1
+    private var playerClicks = ArrayList<Int>()
+    private var computerClicks = ArrayList<Int>()
+    private var playerRecord = 0
+    private lateinit var compButton: Button
+    private var buttonId = 0
+    private var computerRecord = 0
+    private var scoreCard: TextView? = null
+    private var choices = mutableListOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9)
     fun buttonClicked(view: View) {
         var whichButton = view as Button
         when (whichButton.id) {
@@ -47,8 +46,8 @@ class VersusComputer : AppCompatActivity() {
         someoneWon = false
     }
 
-    fun computerTurn() {
-        buttonId = choices[(0..choices.size - 1).random()]
+    private fun computerTurn() {
+        buttonId = choices.random()
         compButton = when (buttonId) {
             1 -> findViewById(R.id.button1)
             2 -> findViewById(R.id.button2)
@@ -68,64 +67,38 @@ class VersusComputer : AppCompatActivity() {
         choices.remove(buttonId)
     }
 
-    fun drawOnButton(buttonId: Int, whichButton: Button) {
+    private fun drawOnButton(buttonId: Int, whichButton: Button) {
         if (player == 1) {
             whichButton.text = "X"
             whichButton.setBackgroundColor(resources.getColor(R.color.player1Color))
             player = 0
             whichButton.isEnabled = false
-            if (count >= 4 && count <= 9)
+            if (count in 5..9)
                 checkWin(1)
         } else {
             whichButton.text = "O"
             whichButton.setBackgroundColor(resources.getColor(R.color.player2Color))
             player = 1
             whichButton.isEnabled = false
-            if (count >= 5)
-                checkWin(0)
+            if (count in 5..9)
+                checkWin(2)
         }
     }
 
-    fun checkWin(playerOrComp: Int) {
+    private fun checkWin(playerOrComp: Int) {
         var winner = 0
         if (playerOrComp == 1) {
-            if (playerClicks.contains(1) && playerClicks.contains(2) && playerClicks.contains(3))
-                winner = 1
-            else if (playerClicks.contains(4) && playerClicks.contains(5) && playerClicks.contains(6))
-                winner = 1
-            else if (playerClicks.contains(7) && playerClicks.contains(8) && playerClicks.contains(9))
-                winner = 1
-            else if (playerClicks.contains(1) && playerClicks.contains(4) && playerClicks.contains(7))
-                winner = 1
-            else if (playerClicks.contains(2) && playerClicks.contains(5) && playerClicks.contains(8))
-                winner = 1
-            else if (playerClicks.contains(3) && playerClicks.contains(6) && playerClicks.contains(9))
-                winner = 1
-            else if (playerClicks.contains(1) && playerClicks.contains(5) && playerClicks.contains(9))
-                winner = 1
-            else if (playerClicks.contains(3) && playerClicks.contains(5) && playerClicks.contains(7))
-                winner = 1
-            else if (count == 9) {
-                Toast.makeText(this, "Draw", Toast.LENGTH_SHORT).show()
-                restart()
-            }
+            val result = calculateWin(playerClicks)
+            if(result == 1)
+                winner = playerOrComp;
+            else if(result == 2 || result == 0)
+                return
         } else {
-            if (computerClicks.contains(1) && computerClicks.contains(2) && computerClicks.contains(3))
-                winner = 2
-            else if (computerClicks.contains(4) && computerClicks.contains(5) && computerClicks.contains(6))
-                winner = 2
-            else if (computerClicks.contains(7) && computerClicks.contains(8) && computerClicks.contains(9))
-                winner = 2
-            else if (computerClicks.contains(1) && computerClicks.contains(4) && computerClicks.contains(7))
-                winner = 2
-            else if (computerClicks.contains(2) && computerClicks.contains(5) && computerClicks.contains(8))
-                winner = 2
-            else if (computerClicks.contains(3) && computerClicks.contains(6) && computerClicks.contains(9))
-                winner = 2
-            else if (computerClicks.contains(1) && computerClicks.contains(5) && computerClicks.contains(9))
-                winner = 2
-            else if (computerClicks.contains(3) && computerClicks.contains(5) && computerClicks.contains(7))
-                winner = 2
+            val result = calculateWin(computerClicks)
+            if(result == 1)
+                winner = playerOrComp;
+            else if(result == 2 || result == 0)
+                    return
         }
         if (winner == 1) {
             Toast.makeText(this, "Player 1 Won", Toast.LENGTH_SHORT).show()
@@ -136,6 +109,31 @@ class VersusComputer : AppCompatActivity() {
             computerRecord += 1
             restart()
         }
+    }
+
+    private fun calculateWin( clicks : ArrayList<Int>) : Int {
+        if (clicks.contains(1) && clicks.contains(2) && clicks.contains(3))
+            return 1
+        else if (clicks.contains(4) && clicks.contains(5) && clicks.contains(6))
+            return 1
+        else if (clicks.contains(7) && clicks.contains(8) && clicks.contains(9))
+            return 1
+        else if (clicks.contains(1) && clicks.contains(4) && clicks.contains(7))
+            return 1
+        else if (clicks.contains(2) && clicks.contains(5) && clicks.contains(8))
+            return 1
+        else if (clicks.contains(3) && clicks.contains(6) && clicks.contains(9))
+            return 1
+        else if (clicks.contains(1) && clicks.contains(5) && clicks.contains(9))
+            return 1
+        else if (clicks.contains(3) && clicks.contains(5) && clicks.contains(7))
+            return 1
+        else if (count == 9) {
+            Toast.makeText(this, "Draw", Toast.LENGTH_SHORT).show()
+            restart()
+            return 2
+        }
+        return 0
     }
 
     fun restart() {
@@ -167,4 +165,6 @@ class VersusComputer : AppCompatActivity() {
         scoreCard = findViewById(R.id.win_records)
         scoreCard!!.text = "You   : $playerRecord \n Computer : $computerRecord"
     }
+
+    fun vsComputer(view: View) {}
 }

@@ -135,6 +135,8 @@ class VersusPlayer : AppCompatActivity() {
             count = 0
         }
         scoreCard = findViewById(R.id.win_records)
-        scoreCard!!.text = "Player 1 : $player1Record\nPlayer 2 : $player2Record"
+        scoreCard.text = "Player 1 : $player1Record\nPlayer 2 : $player2Record"
     }
+
+    fun vsPlayer(view: View) {}
 }

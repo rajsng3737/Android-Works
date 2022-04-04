@@ -28,7 +28,7 @@
     <Button
         android:id="@+id/vPlayerButton"
         android:layout_width="70pt"
-        android:layout_height="20pt"
+        android:layout_height="80dp"
         android:layout_marginStart="126dp"
         android:layout_marginLeft="126dp"
         android:layout_marginTop="79dp"
@@ -46,8 +46,8 @@
 
     <Button
         android:id="@+id/vComputerButton"
-        android:layout_width="161dp"
-        android:layout_height="20pt"
+        android:layout_width="70pt"
+        android:layout_height="80dp"
         android:layout_marginStart="126dp"
         android:layout_marginLeft="126dp"
         android:layout_marginTop="65dp"
