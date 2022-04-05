@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thegame.VersusComputer
-import com.example.thegame.VersusPlayer
 
 class theOption : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

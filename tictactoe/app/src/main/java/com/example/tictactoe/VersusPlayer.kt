@@ -1,4 +1,4 @@
-package com.example.thegame
+package com.example.tictactoe
 
 import android.os.Bundle
 import android.view.View
@@ -39,66 +39,42 @@ class VersusPlayer : AppCompatActivity() {
         drawOnButton(buttonId, whichButton)
     }
 
-    fun drawOnButton(buttonId: Int, whichButton: Button) {
+    private fun drawOnButton(buttonId: Int, whichButton: Button) {
         if (player == 1) {
             whichButton.text = "X"
             whichButton.setBackgroundColor(resources.getColor(R.color.player1Color))
             player1Clicks.add(buttonId)
             whichButton.isEnabled = false
             player = 0
-            if (count >= 5 && count <= 9)
+            if ( count in 5..9)
                 checkWin(1)
-        } else {
+        }
+        else {
             whichButton.text = "O"
             whichButton.setBackgroundColor(resources.getColor(R.color.player2Color))
             player2Clicks.add(buttonId)
             player = 1
             whichButton.isEnabled = false
-            if (count >= 6 && count < 9)
+            if (count in 6..9)
                 checkWin(2)
         }
     }
 
-    fun checkWin(whichPlayer: Int) {
+    private fun checkWin(whichPlayer: Int) {
         var winner = 0
         if (whichPlayer == 1) {
-            if (player1Clicks.contains(1) && player1Clicks.contains(2) && player1Clicks.contains(3))
-                winner = 1
-            else if (player1Clicks.contains(4) && player1Clicks.contains(5) && player1Clicks.contains(6))
-                winner = 1
-            else if (player1Clicks.contains(7) && player1Clicks.contains(8) && player1Clicks.contains(9))
-                winner = 1
-            else if (player1Clicks.contains(1) && player1Clicks.contains(4) && player1Clicks.contains(7))
-                winner = 1
-            else if (player1Clicks.contains(2) && player1Clicks.contains(5) && player1Clicks.contains(8))
-                winner = 1
-            else if (player1Clicks.contains(3) && player1Clicks.contains(6) && player1Clicks.contains(9))
-                winner = 1
-            else if (player1Clicks.contains(1) && player1Clicks.contains(5) && player1Clicks.contains(9))
-                winner = 1
-            else if (player1Clicks.contains(3) && player1Clicks.contains(5) && player1Clicks.contains(7))
-                winner = 1
-            else if (count == 9) {
-                Toast.makeText(this, "Draw", Toast.LENGTH_SHORT).show()
-                restart()
-            }
-        } else if (whichPlayer == 2) {
-            if (player2Clicks.contains(1) && player2Clicks.contains(2) && player2Clicks.contains(3))
+                val result = calculateWin(player1Clicks)
+                if ( result == 1)
+                    winner = 1
+                else if(result == 2 || result == 0)
+                    return
+        }
+        else if (whichPlayer == 2) {
+            val result = calculateWin(player2Clicks)
+            if ( result == 1)
                 winner = 2
-            else if (player2Clicks.contains(4) && player2Clicks.contains(5) && player2Clicks.contains(6))
-                winner = 2
-            else if (player2Clicks.contains(7) && player2Clicks.contains(8) && player2Clicks.contains(9))
-                winner = 2
-            else if (player2Clicks.contains(1) && player2Clicks.contains(4) && player2Clicks.contains(7))
-                winner = 2
-            else if (player2Clicks.contains(2) && player2Clicks.contains(5) && player2Clicks.contains(8))
-                winner = 2
-            else if (player2Clicks.contains(3) && player2Clicks.contains(6) && player2Clicks.contains(9))
-                winner = 2
-            else if (player2Clicks.contains(1) && player2Clicks.contains(5) && player2Clicks.contains(9))
-                winner = 2
-            else if (player2Clicks.contains(3) && player2Clicks.contains(5) && player2Clicks.contains(7))
-                winner = 2
+            else if(result == 2 || result == 0)
+                return
         }
         if (winner == 1) {
             Toast.makeText(this, "Player 1 Won", Toast.LENGTH_SHORT).show()
@@ -109,6 +85,30 @@ class VersusPlayer : AppCompatActivity() {
             player2Record += 1
             restart()
         }
+    }
+    private fun calculateWin( clicks : ArrayList<Int>) : Int {
+        if (clicks.contains(1) && clicks.contains(2) && clicks.contains(3))
+            return 1
+        else if (clicks.contains(4) && clicks.contains(5) && clicks.contains(6))
+            return 1
+        else if (clicks.contains(7) && clicks.contains(8) && clicks.contains(9))
+            return 1
+        else if (clicks.contains(1) && clicks.contains(4) && clicks.contains(7))
+            return 1
+        else if (clicks.contains(2) && clicks.contains(5) && clicks.contains(8))
+            return 1
+        else if (clicks.contains(3) && clicks.contains(6) && clicks.contains(9))
+            return 1
+        else if (clicks.contains(1) && clicks.contains(5) && clicks.contains(9))
+            return 1
+        else if (clicks.contains(3) && clicks.contains(5) && clicks.contains(7))
+            return 1
+        else if (count == 9) {
+            Toast.makeText(this, "Draw", Toast.LENGTH_SHORT).show()
+            restart()
+            return 2
+        }
+        return 0
     }
 
     fun restart() {

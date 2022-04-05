@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".VersusFriend" />
         <activity android:name="com.example.thegame.VersusComputer"/>
-        <activity android:name="com.example.thegame.VersusPlayer"/>
+        <activity android:name=".VersusPlayer"/>
     </application>
 
 </manifest>

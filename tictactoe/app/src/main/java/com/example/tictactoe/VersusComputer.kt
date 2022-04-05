@@ -19,13 +19,13 @@ class VersusComputer : AppCompatActivity() {
     private var playerClicks = ArrayList<Int>()
     private var computerClicks = ArrayList<Int>()
     private var playerRecord = 0
+    private var computerRecord = 0
     private lateinit var compButton: Button
     private var buttonId = 0
-    private var computerRecord = 0
     private var scoreCard: TextView? = null
     private var choices = mutableListOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9)
     fun buttonClicked(view: View) {
-        var whichButton = view as Button
+        val whichButton = view as Button
         when (whichButton.id) {
             R.id.button1 -> buttonId = 1
             R.id.button2 -> buttonId = 2
@@ -90,7 +90,7 @@ class VersusComputer : AppCompatActivity() {
         if (playerOrComp == 1) {
             val result = calculateWin(playerClicks)
             if(result == 1)
-                winner = playerOrComp;
+                winner = playerOrComp
             else if(result == 2 || result == 0)
                 return
         } else {
@@ -136,7 +136,7 @@ class VersusComputer : AppCompatActivity() {
         return 0
     }
 
-    fun restart() {
+    private fun restart() {
         var clearAllButton: Button?
         choices.clear()
         playerClicks.clear()
