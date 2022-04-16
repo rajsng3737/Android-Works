@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    tools:context=".TheOption">
+
+
+    <Button
+        android:id="@+id/vFriendButton"
+        android:layout_width="70pt"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/vs_friend_online"
+        app:backgroundTint="#82B1FF"
+        app:layout_constraintBottom_toTopOf="@+id/vComputerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/vPlayerButton"
+        android:layout_width="70pt"
+        android:layout_height="80dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:layout_marginBottom="250dp"
+        android:gravity="center"
+        android:onClick="vsPlayer"
+        android:text="@string/vs_player"
+        app:backgroundTint="#82B1FF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vComputerButton"
+        app:layout_constraintVertical_bias="1.0"
+        />
+
+    <Button
+        android:id="@+id/vComputerButton"
+        android:layout_width="70pt"
+        android:layout_height="80dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:onClick="vsComputer"
+        android:text="@string/vs_computer"
+        app:backgroundTint="#82B1FF"
+        app:layout_constraintBottom_toTopOf="@+id/vPlayerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vFriendButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

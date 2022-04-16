@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TickTacToe</string>
+    <string name="vs_friend_online">Versus Friend</string>
+    <string name="vs_player">Versus Player</string>
+    <string name="vs_computer">Versus Computer</string>
+    <string name="win_records"> </string>
+    <string name="enter_email">Enter your email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="no_account_String">Don\'t have an account? click here to</string>
+    <string name="already_having_account">Already have an account? click here to</string>
+    <string name="sign_in">Sign In</string>
+</resources>
