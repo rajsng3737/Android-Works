@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">tictactoe</string>
-    <string name="vs_friend_online">Versus Friend</string>
-    <string name="vs_player">Versus Player</string>
-    <string name="vs_computer">Versus Computer</string>
-    <string name="win_records"> </string>
-</resources>
