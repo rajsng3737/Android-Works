@@ -21,7 +21,7 @@ class ForgotPassword : AppCompatActivity() {
     }
     fun forgotPassword(view: View){
         val email = findViewById<EditText>(R.id.fgPasswordEnterEmail).text.toString()
-        mAuth!!.sendPasswordResetEmail(email).addOnCompleteListener(this){ task->
+        mAuth!!.sendPasswordResetEmail(email).addOnCompleteListener(this){ task ->
                 if (task.isSuccessful)
                     Toast.makeText(applicationContext,"Sign in Successful", Toast.LENGTH_LONG).show()
                 else
