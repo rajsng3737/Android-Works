@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TickTacToe">
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false"
+            android:label="@string/title_activity_forgot_password"
+            android:theme="@style/Theme.TickTacToe.NoActionBar" />
+        <activity
             android:name=".CreateAccount"
             android:exported="true">
             <intent-filter>
@@ -18,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignIn" />
+        <activity android:name=".VersusComputer" />
+        <activity android:name=".VersusPlayer" />
+        <activity android:name=".TheOption" />
     </application>
 
 </manifest>

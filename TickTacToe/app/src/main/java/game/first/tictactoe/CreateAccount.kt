@@ -35,13 +35,18 @@ class CreateAccount : AppCompatActivity() {
         }
     }
     fun signIn(view : View){
-        var intent = Intent(this, SignIn::class.java)
+        var intent = Intent(this,SignIn::class.java)
         startActivity(intent)
     }
 
     override fun onStart() {
         super.onStart()
         loadActivity()
+    }
+
+    fun forgotPassword(view: View){
+        var intent = Intent(this,ForgotPassword::class.java)
+        startActivity(intent)
     }
 
     private fun loadActivity(){

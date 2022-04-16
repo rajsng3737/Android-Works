@@ -10,4 +10,16 @@
     <string name="no_account_String">Don\'t have an account? click here to</string>
     <string name="already_having_account">Already have an account? click here to</string>
     <string name="sign_in">Sign In</string>
+    <string name="title_activity_forgot_password">ForgotPassword</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="back_to_home">Back To Home</string>
+    <string name="an_email_has_been_sent_to_you_containing_the_password_reset_link">An Email has been sent to you containing the password Reset Link.</string>
 </resources>

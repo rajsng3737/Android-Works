@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_create_account.xml" value="0.12" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_create_account.xml" value="0.2" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_forgot_password.xml" value="0.264" />
         <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_sign_in.xml" value="0.12107396149949341" />
         <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_the_option.xml" value="0.25" />
