@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:clickable="false"
     android:gravity="center"
-    tools:context=".VersusPlayer"
-    >
+    android:theme="@style/Theme.TickTacToe.NoActionBar"
+    tools:context=".VersusPlayer" >
 
     <TableRow
         android:layout_width="wrap_content"

@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import org.w3c.dom.Text
@@ -21,9 +18,12 @@ class ForgotPassword : AppCompatActivity() {
     }
     fun forgotPassword(view: View){
         val email = findViewById<EditText>(R.id.fgPasswordEnterEmail).text.toString()
-        mAuth!!.sendPasswordResetEmail(email).addOnCompleteListener(this){ task ->
+        val progress = findViewById<ProgressBar>(R.id.progressBar)
+        progress.visibility = View.VISIBLE
+        mAuth!!.sendPasswordResetEmail(email).addOnCompleteListener(this){
+                task ->
                 if (task.isSuccessful)
-                    Toast.makeText(applicationContext,"Sign in Successful", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext,"Email Sent Successfully", Toast.LENGTH_LONG).show()
                 else
                     Toast.makeText(applicationContext,"Error",Toast.LENGTH_LONG).show()
                 var backButton = findViewById<TextView>(R.id.backToHome)
@@ -32,6 +32,7 @@ class ForgotPassword : AppCompatActivity() {
                 backButton.isClickable = true
                 resetToast.visibility = View.VISIBLE
                 resetToast.isClickable = false
+                progress.visibility = View.GONE
         }
     }
     fun backToHome(view : View){

@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/drawable/baseline_logout_24.xml" value="0.2555" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/action_bar.xml" value="0.136" />
         <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_create_account.xml" value="0.2" />
-        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_forgot_password.xml" value="0.264" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_forgot_password.xml" value="0.10400000000000001" />
         <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_sign_in.xml" value="0.12107396149949341" />
-        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_the_option.xml" value="0.25" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_online_game.xml" value="0.2359375" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_sign_in.xml" value="0.2962962962962963" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_the_option.xml" value="0.1" />
         <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_versus_computer.xml" value="0.25" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_versus_online.xml" value="0.1" />
         <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/activity_versus_player.xml" value="0.25" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/layout/nav_header.xml" value="0.136" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/menu/menu_main.xml" value="0.264" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/menu/menu_nav.xml" value="0.264" />
+        <entry key="..\:/Users/rajsn/AndroidStudioProjects/TickTacToe/app/src/main/res/menu/menu_navigation.xml" value="0.10885416666666667" />
       </map>
     </option>
   </component>
