@@ -183,6 +183,7 @@ class OnlineGame : AppCompatActivity() {
     }
 
     private fun restart() {
+        TODO("Not Properly Implemented yet")
         var clearAllButton: Button?
         myClicks.clear()
         myClicks.clear()
