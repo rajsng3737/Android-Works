@@ -11,7 +11,8 @@
         android:theme="@style/Theme.TickTacToe.NoActionBar">
         <activity
             android:name=".OnlineGame"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".VersusOnline"/>
         <activity
             android:name=".VersusOnline"
             android:exported="false" />

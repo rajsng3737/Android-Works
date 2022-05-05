@@ -1,6 +1,8 @@
 package game.first.tictactoe
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView

@@ -95,6 +95,9 @@ class VersusOnline : AppCompatActivity() {
     private fun createSession(sessionId:String, playerValue : Int){
         myRef.child("Users").child("GameSessions").child(sessionId).child("whichPlayer").setValue(1)
         myRef.child("Users").child("GameSessions").child(sessionId).child("ButtonClicked").setValue(-1)
+        myRef.child("Users").child("GameSessions").child(sessionId).child("Draw").setValue("null")
+        myRef.child("Users").child("GameSessions").child(sessionId).child("someoneWon").setValue(-1)
+
         val intent = Intent(this,OnlineGame::class.java)
         intent.putExtra("sessionId",sessionId)
         intent.putExtra("playerValue",playerValue)
